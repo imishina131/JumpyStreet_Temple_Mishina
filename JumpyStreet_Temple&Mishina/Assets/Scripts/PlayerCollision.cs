@@ -2,10 +2,20 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
+    [Header("UI")]
     [SerializeField] GameObject gameOverPanel;
 
+    [Header("Scripts")]
+    [SerializeField] PlayerController playerController;
     [SerializeField] PauseManager pauseManager;
     [SerializeField] ScoreManager scoreManager;
+
+    [Header("Audio")]
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip deathSFX;
+
+    [Header("Pause Delay")]
+    [SerializeField] float pauseDelay = 1f;
 
     private void Awake()
     {
@@ -18,14 +28,20 @@ public class PlayerCollision : MonoBehaviour
         {
             Debug.Log("Hit Obstacle");
 
+            // audio
+            audioSource.PlayOneShot(deathSFX);
+
             // show gameover panel
             gameOverPanel.gameObject.SetActive(true);
 
             // pause time
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
 
             // disable pause manager
             pauseManager.enabled = false;
+
+            // disable player script;
+            playerController.enabled = false;
 
             // save score
             scoreManager.SaveHighScore();
@@ -36,6 +52,12 @@ public class PlayerCollision : MonoBehaviour
 
             // wait to pause time for death animation?
             // invoke nameof method time
+            Invoke(nameof(PauseTime), pauseDelay);
         }
+    }
+
+    void PauseTime()
+    {
+        Time.timeScale = 0f;
     }
 }

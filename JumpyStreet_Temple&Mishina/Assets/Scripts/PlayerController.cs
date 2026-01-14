@@ -8,11 +8,17 @@ public class PlayerController : MonoBehaviour
 
     private float stepLength = 1f;
 
+    [Header("Movement")]
     [SerializeField] float jumpHeight = 0.5f;
     [SerializeField] float jumpTime = 0.25f;
 
+    [Header("Horizontal Bounds")]
     [SerializeField] float minX = -10f;
     [SerializeField] float maxX = 10f;
+
+    [Header("Audio")]
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip jumpSFX;
 
     private bool isMoving;
 
@@ -55,6 +61,9 @@ public class PlayerController : MonoBehaviour
 
         // jump
         StartCoroutine(Jump(dir));
+
+        // audio
+        audioSource.PlayOneShot(jumpSFX);
     }
 
     IEnumerator Jump(Vector3 dir)
