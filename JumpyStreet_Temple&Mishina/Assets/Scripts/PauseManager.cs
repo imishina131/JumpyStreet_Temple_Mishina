@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
@@ -18,7 +19,7 @@ public class PauseManager : MonoBehaviour
     void Update()
     {
         // pause
-        if (Input.GetKeyDown(KeyCode.Escape) && !pausePanel.activeSelf)
+        if (Keyboard.current.escapeKey.wasPressedThisFrame && !pausePanel.activeSelf)
         {
             if (pausePanel == null) return;
 
@@ -39,7 +40,7 @@ public class PauseManager : MonoBehaviour
             AudioListener.pause = true;
         }
 
-        else if (Input.GetKeyDown(KeyCode.Escape) && pausePanel.activeSelf)
+        else if (Keyboard.current.escapeKey.wasPressedThisFrame && pausePanel.activeSelf)
         {
             if (pausePanel == null) return;
 

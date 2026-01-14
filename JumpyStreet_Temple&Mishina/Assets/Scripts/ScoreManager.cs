@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour
 
     private float startPos;
     private float distance;
-    private int score;
+    public int score;
 
     private void Start()
     {

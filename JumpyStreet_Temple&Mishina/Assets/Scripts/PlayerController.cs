@@ -19,22 +19,22 @@ public class PlayerController : MonoBehaviour
 
         // W
         if (Keyboard.current.wKey.wasPressedThisFrame || Keyboard.current.upArrowKey.wasPressedThisFrame)
-            StartMove(Vector3.forward);
+            Move(Vector3.forward);
 
         // S
         if (Keyboard.current.sKey.wasPressedThisFrame || Keyboard.current.downArrowKey.wasPressedThisFrame)
-            StartMove(Vector3.back);
+            Move(Vector3.back);
 
         // A
         if (Keyboard.current.aKey.wasPressedThisFrame || Keyboard.current.leftArrowKey.wasPressedThisFrame)
-            StartMove(Vector3.left);
+            Move(Vector3.left);
 
         // D
         if (Keyboard.current.dKey.wasPressedThisFrame || Keyboard.current.rightArrowKey.wasPressedThisFrame)
-            StartMove(Vector3.right);
+            Move(Vector3.right);
     }
 
-    void StartMove(Vector3 dir)
+    void Move(Vector3 dir)
     {
         // rotate
         transform.forward = dir;
@@ -72,5 +72,25 @@ public class PlayerController : MonoBehaviour
         // move to end position
         transform.position = end;
         isMoving = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            Debug.Log("Hit Obstacle");
+
+            // show gameover panel
+
+
+            // pause time
+            Time.timeScale = 0f;
+
+            // disable pause manager
+
+
+            // save score
+
+        }
     }
 }
