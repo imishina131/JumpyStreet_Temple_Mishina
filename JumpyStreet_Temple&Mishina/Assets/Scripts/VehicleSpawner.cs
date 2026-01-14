@@ -5,7 +5,7 @@ public class VehicleSpawner : MonoBehaviour
 {
 
     [SerializeField] GameObject[] vehicles;
-    [SerializeField] float minTime, maxTime;
+    [SerializeField] float minTime, maxTime, lifeTime;
 
     private void Start()
     {
@@ -21,7 +21,10 @@ public class VehicleSpawner : MonoBehaviour
 
             // spawn vehicle
             int i = Random.Range(0, vehicles.Length);
-            Instantiate(vehicles[i], transform.position, Quaternion.identity);
+            GameObject vehicle = Instantiate(vehicles[i], transform.position, Quaternion.identity);
+
+            // destroy vehicle
+            Destroy(vehicle, lifeTime);
         }
     }
 
