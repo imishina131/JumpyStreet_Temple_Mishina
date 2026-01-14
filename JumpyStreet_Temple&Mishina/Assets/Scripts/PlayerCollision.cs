@@ -33,6 +33,9 @@ public class PlayerCollision : MonoBehaviour
             // cursor enable
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+
+            // wait to pause time for death animation?
+            // invoke nameof method time
         }
     }
 }

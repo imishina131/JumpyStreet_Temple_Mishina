@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpHeight = 0.5f;
     [SerializeField] float jumpTime = 0.25f;
 
+    [SerializeField] float minX = -10f;
+    [SerializeField] float maxX = 10f;
+
     private bool isMoving;
 
     void Update()
@@ -19,19 +22,30 @@ public class PlayerController : MonoBehaviour
 
         // W
         if (Keyboard.current.wKey.wasPressedThisFrame || Keyboard.current.upArrowKey.wasPressedThisFrame)
-            Move(Vector3.forward);
+            TryMove(Vector3.forward);
 
         // S
         if (Keyboard.current.sKey.wasPressedThisFrame || Keyboard.current.downArrowKey.wasPressedThisFrame)
-            Move(Vector3.back);
+            TryMove(Vector3.back);
 
         // A
         if (Keyboard.current.aKey.wasPressedThisFrame || Keyboard.current.leftArrowKey.wasPressedThisFrame)
-            Move(Vector3.left);
+            TryMove(Vector3.left);
 
         // D
         if (Keyboard.current.dKey.wasPressedThisFrame || Keyboard.current.rightArrowKey.wasPressedThisFrame)
-            Move(Vector3.right);
+            TryMove(Vector3.right);
+    }
+
+
+    void TryMove(Vector3 dir)
+    {
+        Vector3 target = transform.position + dir * stepLength;
+
+        // limit horizontal movement
+        if (target.x < minX || target.x > maxX) return;
+
+        Move(dir);
     }
 
     void Move(Vector3 dir)
@@ -72,25 +86,5 @@ public class PlayerController : MonoBehaviour
         // move to end position
         transform.position = end;
         isMoving = false;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Obstacle"))
-        {
-            Debug.Log("Hit Obstacle");
-
-            // show gameover panel
-
-
-            // pause time
-            Time.timeScale = 0f;
-
-            // disable pause manager
-
-
-            // save score
-
-        }
     }
 }

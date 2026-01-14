@@ -2871,6 +2871,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   jumpHeight: 0.5
   jumpTime: 0.25
+  minX: -11
+  maxX: 11
 --- !u!65 &492364675
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10653,6 +10655,14 @@ PrefabInstance:
     - target: {fileID: 1625676375125242259, guid: 80892675a042a5e4ca80a0e4a217b934, type: 3}
       propertyPath: m_Name
       value: Player (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1665252391041157155, guid: 80892675a042a5e4ca80a0e4a217b934, type: 3}
+      propertyPath: maxX
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1665252391041157155, guid: 80892675a042a5e4ca80a0e4a217b934, type: 3}
+      propertyPath: minX
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 5278572398500328678, guid: 80892675a042a5e4ca80a0e4a217b934, type: 3}
       propertyPath: m_LocalPosition.x
