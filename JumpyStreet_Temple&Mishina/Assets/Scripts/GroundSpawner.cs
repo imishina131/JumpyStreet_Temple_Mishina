@@ -21,7 +21,7 @@ public class GroundSpawner : MonoBehaviour
         if (player.position.z >= spawnPosition - spawnDistance)
         {
             Spawn();
-            spawnPosition += 1;
+            spawnPosition += 2;
         }
     }
 
