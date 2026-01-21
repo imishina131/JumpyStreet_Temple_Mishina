@@ -12,7 +12,7 @@ public class VehicleSpawner : MonoBehaviour
 
     private void Start()
     {
-        targetPosition = targetObject.transform.position;
+        //targetPosition = targetObject.transform.position;
         StartCoroutine(SpawnVehicles());
     }
     IEnumerator SpawnVehicles()
@@ -26,15 +26,17 @@ public class VehicleSpawner : MonoBehaviour
             // spawn prefab
             prefabToSpawn = Resources.Load<GameObject>("Black Queen 1");
             Instantiate(prefabToSpawn, new Vector3(transform.position.x, 0.2f, transform.position.z), Quaternion.Euler(0f, direction, 0f));
-            prefabToSpawn.transform.position = Vector3.MoveTowards(transform.position, targetPosition, 10.0f * Time.deltaTime);
+            //prefabToSpawn.transform.position = Vector3.MoveTowards(transform.position, targetPosition, 10.0f * Time.deltaTime);
+
+
             // destroy vehicle
-            //Destroy(prefabToSpawn, lifeTime);
+            Destroy(prefabToSpawn, lifeTime);
         }
     }
 
     void Update()
     {
-        prefabToSpawn.transform.position = Vector3.MoveTowards(transform.position, targetPosition, 10.0f * Time.deltaTime);
+        //prefabToSpawn.transform.position = Vector3.MoveTowards(transform.position, targetPosition, 10.0f * Time.deltaTime);
     }
 
 }
