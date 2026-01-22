@@ -1482,7 +1482,7 @@ Transform:
   m_GameObject: {fileID: 2427190929613944486}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -8.9, y: 0, z: 0.13}
+  m_LocalPosition: {x: -10.06, y: 0, z: 0.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1501,12 +1501,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VehicleSpawner
   vehicles:
-  - {fileID: 100000, guid: 5d7a66b35fd81564380721b6bfcaaa47, type: 3}
+  - {fileID: 7600187390563125627, guid: 660d9a29ba92b1344af34852f80f2fdb, type: 3}
   minTime: 3
   maxTime: 9
   lifeTime: 5
-  direction: 0
-  targetObject: {fileID: 4344565395700638748}
 --- !u!1 &2450646005199100612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,7 +1703,6 @@ Transform:
   - {fileID: 255067588331511029}
   - {fileID: 1395324066894701695}
   - {fileID: 4039353703331172476}
-  - {fileID: 439435240411627990}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3073813307482095972
@@ -2268,37 +2265,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &4344565395700638748
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 439435240411627990}
-  m_Layer: 0
-  m_Name: End
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &439435240411627990
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4344565395700638748}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 8.71, y: 0, z: 0.13}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1994947981685344450}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &4526769073594613375
 GameObject:
   m_ObjectHideFlags: 0

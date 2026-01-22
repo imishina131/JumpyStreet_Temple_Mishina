@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,8 +23,12 @@ public class PlayerController : MonoBehaviour
 
     private bool isMoving;
 
+    public Transform rayPos;
+    Ray ray;
+
     void Update()
     {
+        Debug.DrawRay(rayPos.transform.position, transform.TransformDirection(Vector3.forward) * 1.0f, Color.green);
         if (isMoving || Keyboard.current == null) return;
 
         // W
@@ -50,6 +55,23 @@ public class PlayerController : MonoBehaviour
 
         // limit horizontal movement
         if (target.x < minX || target.x > maxX) return;
+
+        // raycast check for tag of friendly piece to prevent move
+        // if raycast hits friendly then dont move
+
+        ray = new Ray(rayPos.transform.position, dir);
+        RaycastHit hit;
+        if(Physics.Raycast(ray, out hit, 1.0f))
+        {
+            if(hit.collider.gameObject.tag == "Friendly")
+            {
+                Debug.DrawRay(rayPos.transform.position, transform.TransformDirection(Vector3.forward) * 1.5f, Color.green);
+                Debug.Log("Don't move");
+                return;
+            }
+            //Debug.DrawRay(rayPos.transform.position, transform.TransformDirection(Vector3.forward) * 1.5f, Color.green);
+            //Debug.Log("Don't move");
+        }
 
         Move(dir);
     }
