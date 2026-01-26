@@ -131,7 +131,6 @@ public class PlayerController : MonoBehaviour
         if(other.GetComponent<Collider>().gameObject.tag == "Log")
         {
             transform.parent = other.transform;
-            //transform.position.y = offsetForLogs;
             //transform.localPosition = Vector3.zero;
         }
     }
@@ -141,7 +140,6 @@ public class PlayerController : MonoBehaviour
         if(other.GetComponent<Collider>().gameObject.tag == "Log")
         {
             transform.parent = null;
-            //transform.position.y = 0f;
         }
     }
 }

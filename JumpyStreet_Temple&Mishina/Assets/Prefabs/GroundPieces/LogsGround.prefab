@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 819760136535679892}
   m_Layer: 0
   m_Name: CubeW(0) (6)
-  m_TagString: Obstacle
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 1726031665134250660}
   m_Layer: 0
   m_Name: CubeB(0) (2)
-  m_TagString: Obstacle
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 424669308357818842}
   m_Layer: 0
   m_Name: CubeW(0) (5)
-  m_TagString: Obstacle
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 8432259697914355220}
   m_Layer: 0
   m_Name: CubeW(0) (4)
-  m_TagString: Obstacle
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -876,7 +876,7 @@ GameObject:
   - component: {fileID: 9093397932260636057}
   m_Layer: 0
   m_Name: CubeW(0) (3)
-  m_TagString: Obstacle
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -988,7 +988,7 @@ GameObject:
   - component: {fileID: 8734117739221764111}
   m_Layer: 0
   m_Name: CubeW(0) (6)
-  m_TagString: Obstacle
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1136,7 +1136,7 @@ GameObject:
   - component: {fileID: 3697705592005325931}
   m_Layer: 0
   m_Name: CubeW(0) (4)
-  m_TagString: Obstacle
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1248,7 +1248,7 @@ GameObject:
   - component: {fileID: 4347463966096910593}
   m_Layer: 0
   m_Name: CubeW(0) (3)
-  m_TagString: Obstacle
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1360,7 +1360,7 @@ GameObject:
   - component: {fileID: 753459326963976465}
   m_Layer: 0
   m_Name: CubeB(0) (5)
-  m_TagString: Obstacle
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1472,7 +1472,7 @@ GameObject:
   - component: {fileID: 7486591220248651380}
   m_Layer: 0
   m_Name: CubeB(0) (5)
-  m_TagString: Obstacle
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1584,7 +1584,7 @@ GameObject:
   - component: {fileID: 8484294487918922246}
   m_Layer: 0
   m_Name: CubeB(0) (3)
-  m_TagString: Obstacle
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1696,7 +1696,7 @@ GameObject:
   - component: {fileID: 1324683424314510049}
   m_Layer: 0
   m_Name: CubeW(0) (7)
-  m_TagString: Obstacle
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1808,7 +1808,7 @@ GameObject:
   - component: {fileID: 183619420454932499}
   m_Layer: 0
   m_Name: CubeB(0) (2)
-  m_TagString: Obstacle
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1920,7 +1920,7 @@ GameObject:
   - component: {fileID: 6857881021186131347}
   m_Layer: 0
   m_Name: CubeB(0) (7)
-  m_TagString: Obstacle
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2032,7 +2032,7 @@ GameObject:
   - component: {fileID: 243253492829319020}
   m_Layer: 0
   m_Name: CubeB(0) (6)
-  m_TagString: Obstacle
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2144,7 +2144,7 @@ GameObject:
   - component: {fileID: 4595388203846279956}
   m_Layer: 0
   m_Name: CubeB(0) (4)
-  m_TagString: Obstacle
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2256,7 +2256,7 @@ GameObject:
   - component: {fileID: 5078953188433348630}
   m_Layer: 0
   m_Name: CubeB(0) (4)
-  m_TagString: Obstacle
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2368,7 +2368,7 @@ GameObject:
   - component: {fileID: 2851485471949466528}
   m_Layer: 0
   m_Name: CubeB(0) (6)
-  m_TagString: Obstacle
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2592,7 +2592,7 @@ GameObject:
   - component: {fileID: 6860793004616333026}
   m_Layer: 0
   m_Name: CubeW(0) (7)
-  m_TagString: Obstacle
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2704,7 +2704,7 @@ GameObject:
   - component: {fileID: 6718693644750249684}
   m_Layer: 0
   m_Name: CubeW(0) (5)
-  m_TagString: Obstacle
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2816,7 +2816,7 @@ GameObject:
   - component: {fileID: 7385013698750833749}
   m_Layer: 0
   m_Name: CubeW(0) (2)
-  m_TagString: Obstacle
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3040,7 +3040,7 @@ GameObject:
   - component: {fileID: 1223200430355035420}
   m_Layer: 0
   m_Name: CubeB(0) (3)
-  m_TagString: Obstacle
+  m_TagString: Lava
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
