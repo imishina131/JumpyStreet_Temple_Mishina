@@ -12093,6 +12093,7 @@ MonoBehaviour:
   audioSource: {fileID: 2145471903}
   jumpSFX: {fileID: 8300000, guid: 4d5a8f44fe9ed1a45af81bd7f4a2a6c0, type: 3}
   rayPos: {fileID: 154115067}
+  offsetForLogs: 0.7
 --- !u!4 &2145471902 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 473602, guid: 48d5ea4ff810d0e4ea36af7235dd5fd7, type: 3}
