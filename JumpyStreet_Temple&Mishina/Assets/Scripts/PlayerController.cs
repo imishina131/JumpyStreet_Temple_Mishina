@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
 
     Ray logCheckRay;
 
+    [SerializeField] float offsetForLogs = 0.2f;
+
     void Update()
     {
 
@@ -77,24 +79,6 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("Don't move");
         }
 
-        logCheckRay = new Ray(rayPos.transform.position, Vector3.down);
-        RaycastHit logHit;
-        if (Physics.Raycast(logCheckRay, out logHit, 0.7f))
-        {
-            if (logHit.collider.gameObject.tag == "Log")
-            {
-                Debug.DrawRay(rayPos.transform.position, transform.TransformDirection(Vector3.down) * 0.7f, Color.green);
-                Debug.Log("Move with Log");
-                transform.parent = logHit.transform;
-                return;
-            }
-            else
-            {
-                transform.parent = null;
-            }
-            //Debug.DrawRay(rayPos.transform.position, transform.TransformDirection(Vector3.forward) * 1.5f, Color.green);
-            //Debug.Log("Don't move");
-        }
 
         Move(dir);
     }
@@ -140,5 +124,24 @@ public class PlayerController : MonoBehaviour
         // move to end position
         transform.position = end;
         isMoving = false;
+    }
+
+    void OnTriggerEnter(Collider other)//parents the player to the moving log so it moves with it
+    {
+        if(other.GetComponent<Collider>().gameObject.tag == "Log")
+        {
+            transform.parent = other.transform;
+            //transform.position.y = offsetForLogs;
+            //transform.localPosition = Vector3.zero;
+        }
+    }
+    
+    void OnTriggerExit(Collider other)//unparents player from log on exit
+    {
+        if(other.GetComponent<Collider>().gameObject.tag == "Log")
+        {
+            transform.parent = null;
+            //transform.position.y = 0f;
+        }
     }
 }
