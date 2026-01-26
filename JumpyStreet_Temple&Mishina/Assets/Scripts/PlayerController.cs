@@ -26,9 +26,11 @@ public class PlayerController : MonoBehaviour
     public Transform rayPos;
     Ray ray;
 
+    Ray logCheckRay;
+
     void Update()
     {
-        Debug.DrawRay(rayPos.transform.position, transform.TransformDirection(Vector3.forward) * 1.0f, Color.green);
+
         if (isMoving || Keyboard.current == null) return;
 
         // W
@@ -46,6 +48,8 @@ public class PlayerController : MonoBehaviour
         // D
         if (Keyboard.current.dKey.wasPressedThisFrame || Keyboard.current.rightArrowKey.wasPressedThisFrame)
             TryMove(Vector3.right);
+
+        Debug.DrawRay(rayPos.transform.position, transform.TransformDirection(Vector3.down) * 0.7f, Color.green);
     }
 
 
@@ -68,6 +72,25 @@ public class PlayerController : MonoBehaviour
                 Debug.DrawRay(rayPos.transform.position, transform.TransformDirection(Vector3.forward) * 1.5f, Color.green);
                 Debug.Log("Don't move");
                 return;
+            }
+            //Debug.DrawRay(rayPos.transform.position, transform.TransformDirection(Vector3.forward) * 1.5f, Color.green);
+            //Debug.Log("Don't move");
+        }
+
+        logCheckRay = new Ray(rayPos.transform.position, Vector3.down);
+        RaycastHit logHit;
+        if (Physics.Raycast(logCheckRay, out logHit, 0.7f))
+        {
+            if (logHit.collider.gameObject.tag == "Log")
+            {
+                Debug.DrawRay(rayPos.transform.position, transform.TransformDirection(Vector3.down) * 0.7f, Color.green);
+                Debug.Log("Move with Log");
+                transform.parent = logHit.transform;
+                return;
+            }
+            else
+            {
+                transform.parent = null;
             }
             //Debug.DrawRay(rayPos.transform.position, transform.TransformDirection(Vector3.forward) * 1.5f, Color.green);
             //Debug.Log("Don't move");

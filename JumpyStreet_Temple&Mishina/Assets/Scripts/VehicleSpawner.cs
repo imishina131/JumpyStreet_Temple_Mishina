@@ -5,7 +5,7 @@ public class VehicleSpawner : MonoBehaviour
 {
 
     [SerializeField] GameObject[] vehicles;
-    [SerializeField] float minTime, maxTime, lifeTime, direction;
+    [SerializeField] float minTime, maxTime, lifeTime, direction, rotationZ;
 
     private void Start()
     {
@@ -21,7 +21,7 @@ public class VehicleSpawner : MonoBehaviour
 
             // spawn vehicle
             int i = Random.Range(0, vehicles.Length);
-            GameObject vehicle = Instantiate(vehicles[i], transform.position, Quaternion.Euler(0f, direction, 0f));
+            GameObject vehicle = Instantiate(vehicles[i], transform.position, Quaternion.Euler(0f, direction, rotationZ));
             vehicle.transform.Translate(Vector3.forward * 2.0f * Time.deltaTime);
             //vehicle.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
 
