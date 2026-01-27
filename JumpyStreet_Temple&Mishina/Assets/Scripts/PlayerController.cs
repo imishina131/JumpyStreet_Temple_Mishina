@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float minX = -10f;
     [SerializeField] float maxX = 10f;
 
+    [Header("Scripts")]
+    [SerializeField] PlayerCollision playerCollision;
+
     [Header("Audio")]
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip jumpSFX;
@@ -26,7 +29,7 @@ public class PlayerController : MonoBehaviour
 
     //Ray logCheckRay;
 
-    bool onLog, isJumping;
+    bool onLog;
 
     void Update()
     {
@@ -52,6 +55,12 @@ public class PlayerController : MonoBehaviour
             TryMove(Vector3.right);
 
         Debug.DrawRay(rayPos.transform.position, transform.TransformDirection(Vector3.down) * 0.7f, Color.green);
+
+        // out of bounds check for log
+        if (transform.position.x < minX || transform.position.x > maxX)
+        {
+            playerCollision.Die();
+        }
     }
 
 
@@ -99,6 +108,9 @@ public class PlayerController : MonoBehaviour
     {
         isMoving = true;
 
+        // log logic
+        bool isJumping = onLog;
+
         // start position
         Vector3 start = transform.position;
 
@@ -125,7 +137,7 @@ public class PlayerController : MonoBehaviour
         transform.position = end;
         isMoving = false;
 
-        // snap to board center
+        // snap to board center after log jump
         if (isJumping)
         {
             Vector3 pos = transform.position;
@@ -134,8 +146,6 @@ public class PlayerController : MonoBehaviour
             pos.z = Mathf.Round(pos.z);
 
             transform.position = pos;
-
-            isJumping = false;
         }
     }
 
@@ -144,6 +154,7 @@ public class PlayerController : MonoBehaviour
         if(other.GetComponent<Collider>().gameObject.tag == "Log")
         {
             transform.parent = other.transform;
+
             onLog = true;
         }
     }
@@ -153,8 +164,8 @@ public class PlayerController : MonoBehaviour
         if(other.GetComponent<Collider>().gameObject.tag == "Log")
         {
             transform.parent = null;
-            onLog = true;
-            isJumping = true;
+
+            onLog = false;
         }
     }
 }

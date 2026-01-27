@@ -9,6 +9,11 @@ public class PauseManager : MonoBehaviour
 
     [SerializeField] PlayerController playerScript;
 
+    [Header("Audio")]
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip pauseSFX;
+    [SerializeField] AudioClip unpauseSFX;
+
     private void Awake()
     {
         // disable pause panel
@@ -36,8 +41,8 @@ public class PauseManager : MonoBehaviour
             // pause time
             Time.timeScale = 0f;
 
-            // audio
-            AudioListener.pause = true;
+            // pause audio
+            audioSource.PlayOneShot(pauseSFX);
         }
 
         else if (Keyboard.current.escapeKey.wasPressedThisFrame && pausePanel.activeSelf)
@@ -57,8 +62,8 @@ public class PauseManager : MonoBehaviour
             // resume time
             Time.timeScale = 1f;
 
-            // audio
-            AudioListener.pause = false;
+            // unpause audio
+            audioSource.PlayOneShot(unpauseSFX);
         }
     }
 
@@ -77,8 +82,8 @@ public class PauseManager : MonoBehaviour
         // resume time
         Time.timeScale = 1f;
 
-        // audio
-        AudioListener.pause = false;
+        // unpause audio
+        audioSource.PlayOneShot(unpauseSFX);
     }
 
 }

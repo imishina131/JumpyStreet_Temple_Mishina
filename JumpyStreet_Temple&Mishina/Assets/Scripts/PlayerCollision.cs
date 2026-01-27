@@ -57,7 +57,7 @@ public class PlayerCollision : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
         Debug.Log("Hit Obstacle");
 
