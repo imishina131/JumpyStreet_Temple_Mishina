@@ -12387,10 +12387,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4918655539086754840, guid: e8b5609f72964ad46b340a43a8048b8e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.169
-      objectReference: {fileID: 0}
     - target: {fileID: 6826076059690277579, guid: e8b5609f72964ad46b340a43a8048b8e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -12613,6 +12609,10 @@ PrefabInstance:
     - target: {fileID: 3879456319531331587, guid: 497b75f4dd4866c40b5d275bf155bd57, type: 3}
       propertyPath: m_Name
       value: LogsGround
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879456319531331587, guid: 497b75f4dd4866c40b5d275bf155bd57, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
