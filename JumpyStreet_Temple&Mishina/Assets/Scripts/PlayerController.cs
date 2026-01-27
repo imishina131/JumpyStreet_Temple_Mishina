@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Controls;
 using System.Collections;
-using Unity.VisualScripting;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,12 +24,14 @@ public class PlayerController : MonoBehaviour
     public Transform rayPos;
     Ray ray;
 
-    Ray logCheckRay;
+    //Ray logCheckRay;
 
-    [SerializeField] float offsetForLogs = 0.2f;
+    bool onLog, isJumping;
 
     void Update()
     {
+
+        // INPUT
 
         if (isMoving || Keyboard.current == null) return;
 
@@ -124,22 +124,37 @@ public class PlayerController : MonoBehaviour
         // move to end position
         transform.position = end;
         isMoving = false;
+
+        // snap to board center
+        if (isJumping)
+        {
+            Vector3 pos = transform.position;
+
+            pos.x = Mathf.Round(pos.x);
+            pos.z = Mathf.Round(pos.z);
+
+            transform.position = pos;
+
+            isJumping = false;
+        }
     }
 
-    void OnTriggerEnter(Collider other)//parents the player to the moving log so it moves with it
+    void OnTriggerEnter(Collider other) //parents the player to the moving log so it moves with it
     {
         if(other.GetComponent<Collider>().gameObject.tag == "Log")
         {
             transform.parent = other.transform;
-            //transform.localPosition = Vector3.zero;
+            onLog = true;
         }
     }
     
-    void OnTriggerExit(Collider other)//unparents player from log on exit
+    void OnTriggerExit(Collider other) //unparents player from log on exit
     {
         if(other.GetComponent<Collider>().gameObject.tag == "Log")
         {
             transform.parent = null;
+            onLog = true;
+            isJumping = true;
         }
     }
 }
