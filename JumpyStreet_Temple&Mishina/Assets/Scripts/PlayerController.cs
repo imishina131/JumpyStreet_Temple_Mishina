@@ -53,7 +53,6 @@ public class PlayerController : MonoBehaviour
         if (Keyboard.current.dKey.wasPressedThisFrame || Keyboard.current.rightArrowKey.wasPressedThisFrame)
             TryMove(Vector3.right);
 
-        Debug.DrawRay(rayPos.transform.position, transform.TransformDirection(Vector3.down) * 0.7f, Color.green);
 
         // out of bounds check for log
         if (transform.position.x < minX || transform.position.x > maxX)
@@ -79,9 +78,6 @@ public class PlayerController : MonoBehaviour
         {
             if(hit.collider.gameObject.tag == "Friendly")
             {
-                Debug.DrawRay(rayPos.transform.position, transform.TransformDirection(Vector3.forward) * 1.5f, Color.green);
-                Debug.Log("Don't move");
-
                 // play audio feedback of cant move
                 audioSource.PlayOneShot(cantMoveSFX);
 

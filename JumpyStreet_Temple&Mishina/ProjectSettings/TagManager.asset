@@ -8,6 +8,8 @@ TagManager:
   - Friendly
   - Log
   - Lava
+  - Ground
+  - DestroyWall
   layers:
   - Default
   - TransparentFX
