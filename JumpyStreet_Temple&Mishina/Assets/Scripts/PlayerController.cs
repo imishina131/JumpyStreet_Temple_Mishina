@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     [Header("Audio")]
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip jumpSFX;
+    [SerializeField] AudioClip cantMoveSFX;
 
     private bool isMoving;
 
@@ -80,6 +81,10 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.DrawRay(rayPos.transform.position, transform.TransformDirection(Vector3.forward) * 1.5f, Color.green);
                 Debug.Log("Don't move");
+
+                // play audio feedback of cant move
+                audioSource.PlayOneShot(cantMoveSFX);
+
                 return;
             }
         }
