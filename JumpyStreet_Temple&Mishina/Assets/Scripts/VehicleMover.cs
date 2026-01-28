@@ -7,6 +7,7 @@ public class VehicleMover : MonoBehaviour
 
     private void Update()
     {
+        // move forward
         transform.position += transform.forward * speed * Time.deltaTime;
     }
 

@@ -26,16 +26,19 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        // black chess piece
         if (other.gameObject.CompareTag("Obstacle"))
         {
             Die();
         }
 
+        // jump on log
         if (other.gameObject.CompareTag("Log"))
         {
             onLog = true;
         }
 
+        // hit lava
         if (other.gameObject.CompareTag("Lava"))
         {
             if (onLog)
@@ -66,9 +69,6 @@ public class PlayerCollision : MonoBehaviour
 
         // show gameover panel
         gameOverPanel.gameObject.SetActive(true);
-
-        // pause time
-        //Time.timeScale = 0f;
 
         // disable pause manager
         pauseManager.enabled = false;

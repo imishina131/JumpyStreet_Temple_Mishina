@@ -30,7 +30,7 @@ public class ScoreManager : MonoBehaviour
         }
 
         score = Mathf.FloorToInt(distance);
-        scoreText.text = "Score: " + score;
+        scoreText.text = "SCORE - " + score;
     }
 
     public void SaveHighScore()
@@ -44,13 +44,13 @@ public class ScoreManager : MonoBehaviour
             highscore = score;
         }
 
-        highScoreText.text = "High Score: " + highscore;
+        highScoreText.text = "HIGH SCORE - " + highscore;
     }
 
     void LoadHighScore()
     {
         int highScore = PlayerPrefs.GetInt("HighScore", 0);
-        highScoreText.text = "High Score: " + highScore; 
+        highScoreText.text = "HIGH SCORE - " + highScore; 
     }
 
 }

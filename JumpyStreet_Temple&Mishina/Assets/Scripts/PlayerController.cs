@@ -27,8 +27,6 @@ public class PlayerController : MonoBehaviour
     public Transform rayPos;
     Ray ray;
 
-    //Ray logCheckRay;
-
     bool onLog;
 
     void Update()
@@ -84,8 +82,6 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Don't move");
                 return;
             }
-            //Debug.DrawRay(rayPos.transform.position, transform.TransformDirection(Vector3.forward) * 1.5f, Color.green);
-            //Debug.Log("Don't move");
         }
 
 
@@ -137,7 +133,7 @@ public class PlayerController : MonoBehaviour
         transform.position = end;
         isMoving = false;
 
-        // snap to board center after log jump
+        // snap to board center after log jump exit
         if (isJumping)
         {
             Vector3 pos = transform.position;

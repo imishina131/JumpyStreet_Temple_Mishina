@@ -45,6 +45,7 @@ public class PauseManager : MonoBehaviour
             audioSource.PlayOneShot(pauseSFX);
         }
 
+        // unpause
         else if (Keyboard.current.escapeKey.wasPressedThisFrame && pausePanel.activeSelf)
         {
             if (pausePanel == null) return;
